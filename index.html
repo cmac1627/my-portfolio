@@ -7,14 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
+body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; overflow-x: hidden; }
 header { background: #1F1F1F; color: white; text-align: center; padding: 60px 20px; }
 header img { border-radius: 50%; width: 150px; height: 150px; border: 4px solid white; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-section { max-width: 900px; margin: 40px auto; background: white; padding: 30px 40px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+section { max-width: 900px; margin: 40px auto; background: white; padding: 30px 40px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); opacity: 0; transform: translateY(20px); transition: all 1s ease; }
+section.visible { opacity: 1; transform: translateY(0); }
 h1 { font-size: 36px; margin-bottom: 10px; }
 h2 { font-size: 28px; margin-bottom: 20px; }
 ul { list-style: none; padding-left: 0; }
-.skills, .experience, .samples, .contact, .tools, .faq, .testimonials { display: flex; flex-wrap: wrap; gap: 15px; }
+.skills, .experience, .samples, .contact, .tools, .faq { display: flex; flex-wrap: wrap; gap: 15px; }
 .card { flex: 1 1 250px; background: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 a.button { display: inline-block; margin-top: 15px; padding: 12px 25px; background: #1F1F1F; color: white; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
@@ -30,8 +31,13 @@ section:nth-child(even) { background: #f9f9f9; }
 .timeline-event { position: relative; margin-bottom: 30px; padding-left: 20px; }
 .timeline-event::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: #1F1F1F; border-radius: 50%; border: 3px solid #fafafa; }
 
-/* Icons for tools */
+/* Tool icons */
 .tool-icon { margin-right: 8px; color: #1F1F1F; }
+
+/* Testimonials carousel */
+.testimonials-container { position: relative; overflow: hidden; width: 100%; max-width: 900px; margin: auto; }
+.testimonials-track { display: flex; transition: transform 0.5s ease-in-out; }
+.testimonial-card { flex: 0 0 100%; box-sizing: border-box; padding: 20px; background: #fafafa; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-right: 15px; }
 </style>
 </head>
 <body>
@@ -42,42 +48,30 @@ section:nth-child(even) { background: #f9f9f9; }
   <p>Virtual Assistant • Administrative Assistant • AI Trainer</p>
 </header>
 
-<section id="about">
+<section id="about" class="fade-in">
   <h2>About Me</h2>
   <p>Highly organized Administrative and Virtual Assistant with over 3 years of experience supporting government health programs, managing office operations, handling budgets, and delivering excellent customer service. Skilled in project coordination, data entry, document management, and calendar/email administration. Proven ability to manage multi-million peso budgets with 100% compliance. Licensed Basic Life Support (BLS) provider.</p>
 </section>
 
-<section id="skills">
+<section id="skills" class="fade-in">
   <h2>Skills</h2>
   <div class="skills">
-    <div class="card">
-      Administrative Support & Office Management
+    <div class="card">Administrative Support & Office Management
       <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
     </div>
-    <div class="card">
-      Virtual Assistance
+    <div class="card">Virtual Assistance
       <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
-    <div class="card">
-      Calendar & Email Management
+    <div class="card">Calendar & Email Management
       <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
-    <div class="card">
-      Data Entry & Database Updating
+    <div class="card">Data Entry & Database Updating
       <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
-    </div>
-    <div class="card">
-      Project Coordination
-      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
-    </div>
-    <div class="card">
-      Budget Monitoring & Reporting
-      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="fade-in">
   <h2>Experience</h2>
   <div class="timeline">
     <div class="timeline-event">
@@ -91,15 +85,15 @@ section:nth-child(even) { background: #f9f9f9; }
   </div>
 </section>
 
-<section id="samples">
+<section id="samples" class="fade-in">
   <h2>Sample Work</h2>
   <div class="samples">
-    <div class="card"><i class="fas fa-file-invoice tool-icon"></i>Administrative Assistant: Managed a PHP 6X,XXX,XXX budget with 100% compliance, monitored budget utilization (2023: 97.7%, 2022: 96.17%).</div>
+    <div class="card"><i class="fas fa-file-invoice tool-icon"></i>Administrative Assistant: Managed a PHP 6X,XXX,XXX budget with 100% compliance, monitored budget utilization.</div>
     <div class="card"><i class="fas fa-robot tool-icon"></i>AI Trainer: Contributed to AI model training tasks including data labeling, quality assurance, and content evaluation.</div>
   </div>
 </section>
 
-<section id="tools">
+<section id="tools" class="fade-in">
   <h2>Tools & Software</h2>
   <div class="tools">
     <div class="card"><i class="fab fa-slack tool-icon"></i>Slack</div>
@@ -112,7 +106,7 @@ section:nth-child(even) { background: #f9f9f9; }
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="fade-in">
   <h2>How I Work</h2>
   <div class="faq">
     <div class="card">I prioritize tasks daily and keep clients updated on progress regularly.</div>
@@ -122,16 +116,18 @@ section:nth-child(even) { background: #f9f9f9; }
   </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" class="fade-in">
   <h2>Testimonials</h2>
-  <div class="testimonials">
-    <div class="card">“Cj is a fast learner and adapts quickly to new tools and processes.”</div>
-    <div class="card">“Goal-oriented and always ensures tasks are completed efficiently.”</div>
-    <div class="card">“Remarkable attention to detail — nothing slips through unnoticed.”</div>
+  <div class="testimonials-container">
+    <div class="testimonials-track" id="testimonialTrack">
+      <div class="testimonial-card">“Cj is a fast learner and adapts quickly to new tools and processes.”</div>
+      <div class="testimonial-card">“Goal-oriented and always ensures tasks are completed efficiently.”</div>
+      <div class="testimonial-card">“Remarkable attention to detail — nothing slips through unnoticed.”</div>
+    </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="fade-in">
   <h2>Contact</h2>
   <div class="contact">
     <div class="card"><i class="fas fa-envelope tool-icon"></i> Email: cjrobicamacale@gmail.com</div>
@@ -150,9 +146,25 @@ window.addEventListener('load', () => {
     bar.style.width = '0';
     setTimeout(() => { bar.style.width = width; }, 300);
   });
+
+  // Fade-in sections on scroll
+  const sections = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.2 });
+  sections.forEach(section => observer.observe(section));
+
+  // Testimonials carousel
+  const track = document.getElementById('testimonialTrack');
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % track.children.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }, 4000);
 });
 </script>
 
 </body>
 </html>
-
