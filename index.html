@@ -4,17 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Christian Joshua Robica Macale Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f4f8; color: #333; }
-header { background: linear-gradient(135deg, #4f46e5, #8b5cf6); color: white; text-align: center; padding: 60px 20px; }
-header img { border-radius: 50%; width: 150px; height: 150px; border: 4px solid white; margin-bottom: 15px; }
-section { max-width: 900px; margin: 40px auto; background: white; padding: 30px 40px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-h1, h2 { margin-bottom: 15px; }
-ul { list-style: disc; padding-left: 20px; }
-.skills, .experience, .samples, .contact { display: flex; flex-wrap: wrap; gap: 15px; }
-.card { flex: 1 1 250px; background: #f9f9ff; padding: 15px 20px; border-radius: 15px; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
-a.button { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #4f46e5; color: white; border-radius: 12px; text-decoration: none; transition: background 0.3s; }
-a.button:hover { background: #3730a3; }
+body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
+header { background: #1F1F1F; color: white; text-align: center; padding: 60px 20px; }
+header img { border-radius: 50%; width: 150px; height: 150px; border: 4px solid white; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+section { max-width: 900px; margin: 40px auto; background: white; padding: 30px 40px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+h1 { font-size: 36px; margin-bottom: 10px; }
+h2 { font-size: 28px; margin-bottom: 20px; }
+ul { list-style: none; padding-left: 0; }
+.skills, .experience, .samples, .contact, .tools, .faq, .testimonials { display: flex; flex-wrap: wrap; gap: 15px; }
+.card { flex: 1 1 250px; background: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+a.button { display: inline-block; margin-top: 15px; padding: 12px 25px; background: #1F1F1F; color: white; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
+a.button:hover { background: #333333; }
+section:nth-child(even) { background: #f9f9f9; }
+
+/* Skill bar styles */
+.skill-bar { background: #e0e0e0; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+.skill-level { height: 15px; background: #1F1F1F; border-radius: 10px; width: 0; transition: width 1s; }
+
+/* Timeline styles */
+.timeline { position: relative; margin-left: 20px; padding-left: 20px; border-left: 3px solid #1F1F1F; }
+.timeline-event { position: relative; margin-bottom: 30px; padding-left: 20px; }
+.timeline-event::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: #1F1F1F; border-radius: 50%; border: 3px solid #fafafa; }
+
+/* Icons for tools */
+.tool-icon { margin-right: 8px; color: #1F1F1F; }
 </style>
 </head>
 <body>
@@ -27,55 +44,115 @@ a.button:hover { background: #3730a3; }
 
 <section id="about">
   <h2>About Me</h2>
-  <p> Highly organized Administrative and Virtual Assistant with over 3 years of experience supporting
- government health programs, managing office operations, handling budgets, and delivering excellent
- customer service. Skilled in project coordination, data entry, document management, and
- calendar/email administration. Proven ability to manage multi-million peso budgets with 100%
- compliance. Licensed Basic Life Support (BLS) provider.</p>
+  <p>Highly organized Administrative and Virtual Assistant with over 3 years of experience supporting government health programs, managing office operations, handling budgets, and delivering excellent customer service. Skilled in project coordination, data entry, document management, and calendar/email administration. Proven ability to manage multi-million peso budgets with 100% compliance. Licensed Basic Life Support (BLS) provider.</p>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <ul>
-    <li>Administrative Support & Office Management</li>
-    <li>Virtual Assistance</li>
-    <li>Calendar & Email Management</li>
-    <li>Data Entry & Database Updating</li>
-    <li>Records Management</li>
-    <li>Project Coordination</li>
-    <li>Budget Monitoring & Reporting</li>
-    <li>Spreadsheet Management (Excel/Google Sheets)</li>
-    <li>Online Research & Documentation</li>
-  </ul>
+  <div class="skills">
+    <div class="card">
+      Administrative Support & Office Management
+      <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
+    </div>
+    <div class="card">
+      Virtual Assistance
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
+    <div class="card">
+      Calendar & Email Management
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
+    <div class="card">
+      Data Entry & Database Updating
+      <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
+    </div>
+    <div class="card">
+      Project Coordination
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
+    <div class="card">
+      Budget Monitoring & Reporting
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
+    </div>
+  </div>
 </section>
 
 <section id="experience">
   <h2>Experience</h2>
-  <ul>
-    <li>Administrative Assistant — Department of Health Philippines</li>
-    <li>Virtual Assistant / AI trainer — Online Helper</li>
-  </ul>
+  <div class="timeline">
+    <div class="timeline-event">
+      <h3>Administrative Assistant — Department of Health Philippines</h3>
+      <p>Managed multi-million peso budgets, coordinated office operations, and ensured compliance with financial guidelines.</p>
+    </div>
+    <div class="timeline-event">
+      <h3>Virtual Assistant / AI Trainer — Online Helper</h3>
+      <p>Performed AI data labeling, quality assurance, content evaluation, and assisted in virtual administrative tasks.</p>
+    </div>
+  </div>
 </section>
 
 <section id="samples">
   <h2>Sample Work</h2>
-  <ul>
-    <li>Adminitrative Assistant: Managed a PHP 6X,XXX,XXX budget with 100% compliance with financial guidelines, Monitored budget utilization (2023: 97.7%, 2022: 96.17%</li>
-    <li>AI Trainer: Contributed to AI model training tasks including data labeling, quality assurance, and content
- evaluation.</li>
-  </ul>
+  <div class="samples">
+    <div class="card"><i class="fas fa-file-invoice tool-icon"></i>Administrative Assistant: Managed a PHP 6X,XXX,XXX budget with 100% compliance, monitored budget utilization (2023: 97.7%, 2022: 96.17%).</div>
+    <div class="card"><i class="fas fa-robot tool-icon"></i>AI Trainer: Contributed to AI model training tasks including data labeling, quality assurance, and content evaluation.</div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Tools & Software</h2>
+  <div class="tools">
+    <div class="card"><i class="fab fa-slack tool-icon"></i>Slack</div>
+    <div class="card"><i class="fas fa-project-diagram tool-icon"></i>Monday.com</div>
+    <div class="card"><i class="fab fa-discord tool-icon"></i>Discord</div>
+    <div class="card"><i class="fas fa-video tool-icon"></i>Zoom</div>
+    <div class="card"><i class="fas fa-video tool-icon"></i>Google Meet</div>
+    <div class="card"><i class="fas fa-google tool-icon"></i>Google Suites</div>
+    <div class="card"><i class="fas fa-file-alt tool-icon"></i>Microsoft Office</div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>How I Work</h2>
+  <div class="faq">
+    <div class="card">I prioritize tasks daily and keep clients updated on progress regularly.</div>
+    <div class="card">I use project management tools like Monday.com and Slack to organize tasks and communicate effectively.</div>
+    <div class="card">I maintain accuracy in all data entry, lead tracking, and customer follow-ups.</div>
+    <div class="card">I am proactive in anticipating needs and suggesting process improvements.</div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonials">
+    <div class="card">“Cj is a fast learner and adapts quickly to new tools and processes.”</div>
+    <div class="card">“Goal-oriented and always ensures tasks are completed efficiently.”</div>
+    <div class="card">“Remarkable attention to detail — nothing slips through unnoticed.”</div>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <ul>
-    <li>Email: cjrobicamacale@gmail.com</li>
-    <li>Phone: +63 946 351 9434</li>
-    <li>Location: Philippines</li>
-  </ul>
-  <a href="ChristianMacaleCV.pdf" class="button" target="_blank">Download Resume</a>
-
+  <div class="contact">
+    <div class="card"><i class="fas fa-envelope tool-icon"></i> Email: cjrobicamacale@gmail.com</div>
+    <div class="card"><i class="fas fa-phone tool-icon"></i> Phone: +63 946 351 9434</div>
+    <div class="card"><i class="fas fa-map-marker-alt tool-icon"></i> Location: Philippines</div>
+    <div class="card"><a href="ChristianMacaleCV.pdf" class="button" target="_blank"><i class="fas fa-download"></i> Download Resume</a></div>
+  </div>
 </section>
+
+<script>
+// Animate skill bars on page load
+window.addEventListener('load', () => {
+  const bars = document.querySelectorAll('.skill-level');
+  bars.forEach(bar => {
+    const width = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => { bar.style.width = width; }, 300);
+  });
+});
+</script>
 
 </body>
 </html>
+
