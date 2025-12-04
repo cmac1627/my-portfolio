@@ -14,6 +14,7 @@ section { max-width: 900px; margin: 40px auto; background: white; padding: 30px 
 section.visible { opacity: 1; transform: translateY(0); }
 h1 { font-size: 36px; margin-bottom: 10px; }
 h2 { font-size: 28px; margin-bottom: 20px; }
+h3 { font-size: 22px; margin-bottom: 10px; }
 ul { list-style: none; padding-left: 0; }
 .skills, .experience, .samples, .contact, .tools, .faq { display: flex; flex-wrap: wrap; gap: 15px; }
 .card { flex: 1 1 250px; background: #fafafa; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
@@ -32,7 +33,8 @@ section:nth-child(even) { background: #f9f9f9; }
 .timeline-event::before { content: ''; position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: #1F1F1F; border-radius: 50%; border: 3px solid #fafafa; }
 
 /* Tool icons */
-.tool-icon { margin-right: 8px; color: #1F1F1F; }
+.tool-icon { margin-right: 8px; color: #1F1F1F; transition: transform 0.3s, color 0.3s; cursor: default; }
+.tool-icon:hover { transform: translateY(-5px) scale(1.2); color: #4f46e5; }
 
 /* Testimonials carousel */
 .testimonials-container { position: relative; overflow: hidden; width: 100%; max-width: 900px; margin: auto; }
@@ -56,17 +58,35 @@ section:nth-child(even) { background: #f9f9f9; }
 <section id="skills" class="fade-in">
   <h2>Skills</h2>
   <div class="skills">
-    <div class="card">Administrative Support & Office Management
+    <div class="card">
+      <i class="fas fa-file-alt tool-icon" title="Administrative Support"></i>
+      <strong>Administrative Support & Office Management</strong>
       <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
     </div>
-    <div class="card">Virtual Assistance
+    <div class="card">
+      <i class="fas fa-user-friends tool-icon" title="Virtual Assistance"></i>
+      <strong>Virtual Assistance</strong>
       <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
-    <div class="card">Calendar & Email Management
+    <div class="card">
+      <i class="fas fa-calendar-alt tool-icon" title="Calendar & Email Management"></i>
+      <strong>Calendar & Email Management</strong>
       <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
-    <div class="card">Data Entry & Database Updating
+    <div class="card">
+      <i class="fas fa-database tool-icon" title="Data Entry & Database Updating"></i>
+      <strong>Data Entry & Database Updating</strong>
       <div class="skill-bar"><div class="skill-level" style="width:95%"></div></div>
+    </div>
+    <div class="card">
+      <i class="fas fa-tasks tool-icon" title="Project Coordination"></i>
+      <strong>Project Coordination</strong>
+      <div class="skill-bar"><div class="skill-level" style="width:85%"></div></div>
+    </div>
+    <div class="card">
+      <i class="fas fa-calculator tool-icon" title="Budget Monitoring & Reporting"></i>
+      <strong>Budget Monitoring & Reporting</strong>
+      <div class="skill-bar"><div class="skill-level" style="width:90%"></div></div>
     </div>
   </div>
 </section>
@@ -88,8 +108,44 @@ section:nth-child(even) { background: #f9f9f9; }
 <section id="samples" class="fade-in">
   <h2>Sample Work</h2>
   <div class="samples">
-    <div class="card"><i class="fas fa-file-invoice tool-icon"></i>Administrative Assistant: Managed a PHP 6X,XXX,XXX budget with 100% compliance, monitored budget utilization.</div>
-    <div class="card"><i class="fas fa-robot tool-icon"></i>AI Trainer: Contributed to AI model training tasks including data labeling, quality assurance, and content evaluation.</div>
+    <div class="card" style="background:#f0f0f5;">
+      <i class="fas fa-file-invoice tool-icon"></i>
+      <h3>Administrative Assistant - Budget Management</h3>
+      <p><strong>Challenge:</strong> Monthly office budget tracking was time-consuming and error-prone.</p>
+      <p><strong>Action:</strong> Implemented a standardized Excel template with automated formulas for tracking expenditures and alerts for overspending.</p>
+      <p><strong>Result:</strong> Reduced errors by 95% and saved the team 5 hours per week on reporting.</p>
+      <p><strong>Skills/Tools:</strong> 
+        <i class="fas fa-file-excel tool-icon" title="Excel"></i>
+        <i class="fab fa-google tool-icon" title="Google Sheets"></i>
+        <i class="fas fa-calculator tool-icon" title="Budget Management"></i>
+      </p>
+    </div>
+    
+    <div class="card" style="background:#f0f0f5;">
+      <i class="fas fa-database tool-icon"></i>
+      <h3>Data Entry & Database Updating</h3>
+      <p><strong>Challenge:</strong> Client database was outdated, leading to miscommunication.</p>
+      <p><strong>Action:</strong> Conducted a thorough audit, cleaned duplicate records, and implemented a Google Sheet for real-time updates.</p>
+      <p><strong>Result:</strong> Improved data accuracy to 100% and increased response efficiency for client inquiries.</p>
+      <p><strong>Skills/Tools:</strong> 
+        <i class="fab fa-google tool-icon" title="Google Sheets"></i>
+        <i class="fas fa-database tool-icon" title="Database Management"></i>
+        <i class="fas fa-search tool-icon" title="Data Auditing"></i>
+      </p>
+    </div>
+    
+    <div class="card" style="background:#f0f0f5;">
+      <i class="fas fa-users tool-icon"></i>
+      <h3>Communication & Coordination</h3>
+      <p><strong>Challenge:</strong> Team meetings were often unorganized, causing missed deadlines.</p>
+      <p><strong>Action:</strong> Introduced a weekly agenda via Slack and Zoom with clear action points.</p>
+      <p><strong>Result:</strong> All tasks were completed on time, and team efficiency improved noticeably.</p>
+      <p><strong>Skills/Tools:</strong> 
+        <i class="fab fa-slack tool-icon" title="Slack"></i>
+        <i class="fas fa-video tool-icon" title="Zoom/Google Meet"></i>
+        <i class="fas fa-tasks tool-icon" title="Task Coordination"></i>
+      </p>
+    </div>
   </div>
 </section>
 
